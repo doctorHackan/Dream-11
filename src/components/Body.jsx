@@ -8,6 +8,7 @@ const Body = () => {
 
     const [coin,setCoin] = useState(0);
     const [displayCart,setDisplayCart] = useState(false);
+    const [selected,setSelected] = useState([]);
 
     const handleCoin = (ele)=>{
         setCoin(coin+ele);
@@ -28,7 +29,7 @@ const Body = () => {
             <button onClick={()=>handleAvailable()} className='border border-gray-700 px-2 py-1 rounded-sm hover:bg-gray-700 hover:text-white mr-2'>Available</button>
             <button onClick={()=>handleSelected()} className='border border-gray-700 px-2 py-1 rounded-sm hover:bg-gray-700 hover:text-white'>Selected</button>
             {
-                displayCart?<PlayersSelected></PlayersSelected>:<PlayersAvailable coin={coin} handleCoin={handleCoin} />
+                displayCart?<PlayersSelected selected={selected} handleCoin={handleCoin} setSelected={setSelected}></PlayersSelected>:<PlayersAvailable selected={selected} setSelected={setSelected} coin={coin} handleCoin={handleCoin} />
             }
             
             
