@@ -10,10 +10,10 @@ const FreeCoin = ({coin,handleCoin}) => {
     });
 
   return (
-    <div className='max-w-[80%] container mx-auto text-center'>
+    <div className='max-w-[80%] container mx-auto text-center mb-10'>
         <h2 className='text-gray-500 font-bold text-xl mb-2'>My Coins : {coin}</h2>
         <ToastContainer/>
-        <button className='border border-gray-700 px-2 py-1 rounded-sm' onClick={()=>{
+        <button className='border border-gray-700 px-2 py-1 rounded-sm hover:bg-gray-700 hover:text-white' onClick={()=>{
             console.log(clicked.current);
             if(!clicked.current) {clicked.current=true;handleCoin(500);}
             else alreadyGiven();
